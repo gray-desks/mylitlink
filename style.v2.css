@@ -17,6 +17,9 @@
   --card-border: var(--accent-blue);
   --shadow: rgba(0, 0, 0, 0.06);
   --transition: 200ms ease;
+  /* New variables for richer visuals */
+  --card-gradient-start: #ffffff;
+  --card-gradient-end: #f7f4e8;
 }
 
 /* Fresh Kanazawa theme uses a light color scheme only */
@@ -146,7 +149,10 @@ body::before {
   width: 100%;
   box-sizing: border-box;
   padding: 1rem 1rem 1rem 1.25rem;  /* 左アクセント 4px + 1.25rem 内側 */
-  background-color: var(--card);
+  /* Glassy gradient background */
+  background: linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
+  backdrop-filter: blur(6px);
+  background-color: var(--card); /* fallback for older browsers */
   border-radius: 0.85rem;
   text-decoration: none;
   color: var(--fg);
@@ -156,7 +162,12 @@ body::before {
   position: relative;
   overflow: hidden;
   border: 1px solid rgba(125, 125, 125, 0.1);
-  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition), filter var(--transition);
+}
+
+/* reset card text color to default */
+.link-card, .link-card .title {
+  color: var(--fg-main);
 }
 
 .link-card::before {
@@ -170,13 +181,32 @@ body::before {
   transition: background-color 0.2s ease;
 }
 
+
 .link-card:hover, .link-card:focus {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 10px var(--shadow);
-  background-color: rgba(201, 170, 53, 0.08);
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+  background-color: rgba(201, 170, 53, 0.12);
+  filter: brightness(1.05);
 }
 
-.link-card:hover::before, .link-card:focus::before {
+/* Sparkly shine effect */
+.link-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 150%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, rgba(201,170,53,0.6) 50%, transparent 100%);
+  opacity: 0;
+  animation: shine 0.6s linear forwards;
+  pointer-events: none;
+}
+
+.link-card:hover::after, .link-card:focus::after, .link-card.show::after {
+  animation: shine 0.6s linear;
+  left: 100%;
+  opacity: 1;
   background-color: var(--kanazawa-gold);
 }
 
@@ -206,7 +236,66 @@ body::before {
 }
 
 .link-card .title {
+  color: var(--fg-main);
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+/* gold underline effect on hover */
+.link-card .title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: var(--kanazawa-gold);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.3s ease;
+}
+
+.link-card:hover .title::before {
+  transform: scaleX(1);
+}
+
+/* External link icon */
+.link-card[target="_blank"]::after {
+  content: "\f35d"; /* Font Awesome arrow-up-right-from-square */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-size: 14px;
+  margin-left: auto;
+  color: var(--accent-blue);
+  transition: transform var(--transition);
+}
+.link-card[target="_blank"]:hover::after {
+  transform: translateX(2px) translateY(-2px);
+}
+
+.section-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  font-weight: 700;
+  color: var(--fg-main); /* darker text for accessibility */
+  text-align: center;
+  margin: 12px 0 16px;
+  letter-spacing: 0.04em;
+  position: relative;
+  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -4px;
+  width: 60px;
+  height: 2px;
+  background: var(--kanazawa-gold);
+  opacity: 0.75;
 }
 
 footer {
@@ -289,6 +378,28 @@ footer {
   .title { 
     font-size: 15px; 
   }
+}
+
+/* Scroll reveal animation */
+.animate {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Trigger shine once when card becomes visible */
+.link-card.show::before {
+  animation: shine 0.6s linear;
+}
+
+@keyframes shine {
+  0% { left: -75%; opacity: 0; }
+  50% { opacity: 1; }
+  100% { left: 130%; opacity: 0; }
 }
 
 /* Utility classes */
