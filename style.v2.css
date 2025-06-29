@@ -148,7 +148,7 @@ body::before {
 .link-card {
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem 1rem 1rem 1.25rem;  /* 左アクセント 4px + 1.25rem 内側 */
+  padding: 1.25rem 1.25rem 1.25rem 1.5rem;  /* 左アクセント 4px + 1.5rem 内側 */
   /* Glassy gradient background */
   background: linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
   backdrop-filter: blur(6px);
@@ -225,11 +225,11 @@ body::before {
 }
 
 .icon-wrapper {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
   border-radius: 8px;
   background-color: var(--accent-blue);
-  margin-right: 16px;
+  margin-right: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,8 +237,8 @@ body::before {
 }
 
 .icon-wrapper img {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .link-card .title {
