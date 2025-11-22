@@ -1,50 +1,122 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Link Collection - Development</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>" />
+  <title>Hide@Kanazawa | Portfolio</title>
+  <meta name="description" content="Hide@Kanazawaのポートフォリオサイト。AI、Web制作、音楽、執筆活動などの実績をまとめています。">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚜️</text></svg>" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Styles -->
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <main class="container">
-    <div class="profile">
-      <div class="avatar-container">
-        <img class="avatar" src="my.jpg" alt="Hide@Kanazawa のアバター" width="140" height="140" loading="lazy">
+
+  <div class="container">
+
+    <!-- Profile Section -->
+    <header class="profile">
+      <div class="avatar-wrapper">
+        <img class="avatar" src="my.jpg" alt="Hide@Kanazawa" width="120" height="120" loading="lazy">
       </div>
       <h1 class="name">Hide@Kanazawa</h1>
-      <p class="bio"><span class="nowrap">特例子会社で働くアラフォー社員。</span><br>
-        マイノリティでも学び続ければ自分らしく生きることができる。そんな想いを胸に日々活動しています。</p>
-      
+      <div class="role-badge">Digital Creator & Developer</div>
+    </header>
 
-    </div>
+    <!-- Projects Section -->
+    <main>
+      <div class="section-header">Projects & Media</div>
 
-    <h2 class="section-title animate">制作実績 / Works</h2>
-    <div class="links">
-      <!-- 音楽アーティスト -->
-      <a href="https://project-shuka.com/" class="link-card animate" target="_blank" rel="noopener">
-        <img src="秀歌.jpg" alt="秀歌 - shūka" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; margin-right: 18px; flex-shrink: 0;">
-        <span class="title">音楽アーティスト「秀歌 -Shūka」公式サイト</span>
-      </a>
-      
-      <!-- Note writing -->
-      <a href="https://note.com/yamazaki2357" class="link-card animate" target="_blank" rel="noopener">
-        <img src="note.png" alt="Note執筆" style="width: 54px; height: 54px; object-fit: cover; border-radius: 8px; margin-right: 18px; flex-shrink: 0; border: 1px solid rgba(0, 0, 0, 0.1);">
-        <span class="title">Note執筆</span>
-      </a>
-    </div>
+      <div class="portfolio-grid">
+
+        <!-- Project Shuka -->
+        <a href="https://project-shuka.com/" class="portfolio-item animate-item featured" target="_blank"
+          rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+          <div class="item-icon project-image">
+            <img src="秀歌.jpg" alt="秀歌 - Shūka">
+          </div>
+          <div class="item-content">
+            <h3>音楽アーティスト「秀歌 -Shūka」</h3>
+            <p>公式サイトの制作・運営。アーティストの世界観をWebで表現。</p>
+          </div>
+        </a>
+
+        <!-- AI Blog -->
+        <a href="https://gray-desk.github.io/AI-Site/" class="portfolio-item animate-item" target="_blank"
+          rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+          <div class="item-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="item-content">
+            <h3>AI情報ブログ</h3>
+            <p>最新のAI技術トレンドと活用事例を発信。</p>
+          </div>
+        </a>
+
+        <!-- Travel Log -->
+        <a href="https://travel-blog-bay-ten.vercel.app/" class="portfolio-item animate-item" target="_blank"
+          rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+          <div class="item-icon">
+            <i class="fa-solid fa-plane-departure"></i>
+          </div>
+          <div class="item-content">
+            <h3>旅ログ</h3>
+            <p>旅の記録と美しい風景を綴るVercel製ブログ。</p>
+          </div>
+        </a>
+
+        <!-- Youtube -->
+        <a href="https://www.youtube.com/@project-shuka" class="portfolio-item animate-item" target="_blank"
+          rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+          <div class="item-icon">
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="item-content">
+            <h3>YouTube Channel</h3>
+            <p>映像制作と音楽配信を行う公式チャンネル。</p>
+          </div>
+        </a>
+
+        <!-- Note -->
+        <a href="https://note.com/yamazaki2357" class="portfolio-item animate-item" target="_blank" rel="noopener">
+          <i class="fa-solid fa-arrow-up-right-from-square arrow-icon"></i>
+          <div class="item-icon">
+            <i class="fa-solid fa-pen-nib"></i>
+          </div>
+          <div class="item-content">
+            <h3>Note執筆</h3>
+            <p>日々の思考や技術的な知見をエッセイ形式で。</p>
+          </div>
+        </a>
+
+      </div>
+    </main>
 
     <footer>
-      <p>&copy; 2025 Hide@Kanazawa</p>
+      <p>&copy; 2025 Hide@Kanazawa. All Rights Reserved.</p>
     </footer>
-  </main>
 
-  <!-- Motion effects -->
-  <script src="motion.js" defer></script>
+  </div>
+
+  <!-- Simple Motion Script (Optional enhancement) -->
+  <script src="motion.js"></script>
 </body>
+
 </html>

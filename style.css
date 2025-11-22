@@ -1,28 +1,30 @@
 :root {
-  /* Fresh Kanazawa Color Palette */
-  --bg-main: #f8f6ef;          /* 加賀友禅の白地を想起させるアイボリー */
-  --bg-pattern: #ece9dd;       /* アイボリーより少し濃いベージュで格子模様 */
-  --fg-main: #1e1e1c;          /* 黒ではなくチャコール */
-  --kanazawa-gold: #c9aa35;    /* 彩度を–10%したシャンパンゴールド */
-  --accent-blue: #4fa4cf;      /* 浅葱色：爽やかさ担当 */
-  --accent-green: #7fb18f;     /* 若草色：自然・兼六園のイメージ */
-  --card-bg: #ffffff;          /* カード用ホワイト */
-  --bg-pattern-svg: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNCIgaGVpZ2h0PSI0IiB2aWV3Qm94PSIwIDAgNCA0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik0xIDFIMHYxaDFWMXptMiAwSDJ2MWgxVjF6TTEgM0gwdjFoMVYzem0yIDBIMnYxaDFWM3oiIGZpbGw9IiNlY2U5ZGQiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==");
-  
-  /* Theme Variables */
-  --bg: var(--bg-main);
-  --fg: var(--fg-main);
-  --accent: var(--kanazawa-gold);
-  --card: var(--card-bg);
-  --card-border: var(--accent-blue);
-  --shadow: rgba(0, 0, 0, 0.06);
-  --transition: 200ms ease;
-  /* New variables for richer visuals */
-  --card-gradient-start: #ffffff;
-  --card-gradient-end: #f7f4e8;
-}
+  /* Kanazawa "White & Gold" (Haku & Gofun) */
+  --bg-main: #fcfaf5;
+  /* 絹色 (Kinuiro) - Silky off-white */
+  --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #fcfaf5 80%);
 
-/* Fresh Kanazawa theme uses a light color scheme only */
+  --fg-main: #3a3a38;
+  /* 墨 (Sumi) - Soft charcoal */
+  --fg-muted: #8c8c88;
+
+  /* Accents */
+  --kanazawa-gold: #b49042;
+  /* 黄金 (Kogane) - Richer gold for light bg */
+  --kanazawa-gold-glow: rgba(180, 144, 66, 0.25);
+
+  --kaga-enji: #a83840;
+  /* 臙脂 (Enji) - Deep crimson accent */
+
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(180, 144, 66, 0.15);
+  --card-hover-bg: #ffffff;
+
+  --font-main: 'Inter', sans-serif;
+  --font-serif: 'Noto Serif JP', serif;
+
+  --transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
 
 * {
   margin: 0;
@@ -30,281 +32,433 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow-x: hidden;   /* 念のため */
-}
-
 body {
-  margin: 0;
-  font-family: "Inter", "Noto Serif JP", sans-serif;
-  color: var(--fg-main);
+  font-family: var(--font-serif);
   background-color: var(--bg-main);
-  background-image: var(--bg-pattern-svg);
-  background-size: 8px 8px;
-  line-height: 1.5;
-  padding: 24px 16px;
-  position: relative;
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--fg-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
+/* Washi Paper Texture - Darker grain for light bg */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
-  inset: 0;
-  background-image: var(--bg-pattern-svg);
-  background-repeat: repeat;
-  opacity: 0.12;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.4'/%3E%3C/svg%3E");
   pointer-events: none;
+  z-index: -1;
+  mix-blend-mode: multiply;
+  /* Multiply for texture on light bg */
 }
 
 .container {
-  max-width: 480px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 680px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 32px;
+  gap: 48px;
+  position: relative;
+  z-index: 1;
 }
 
+/* Profile Section */
 .profile {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  position: relative;
-}
-
-.avatar-container {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 3px solid var(--kanazawa-gold);
-  box-shadow: 0 3px 8px var(--shadow);
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.name {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: var(--fg);
-  letter-spacing: 0.02em;
-}
-
-.bio {
-  font-size: 16px;
-  max-width: 360px;
-  margin-bottom: 20px;
-  color: var(--fg);
-  opacity: 0.92;
-}
-
-
-.links {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  padding-inline: 4px;  /* 小さな緩衝スペース */
-}
-
-.link-card {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1.25rem 1.25rem 1.25rem 1.5rem;  /* 左アクセント 4px + 1.5rem 内側 */
-  /* Glassy gradient background */
-  background: linear-gradient(135deg, var(--card-gradient-start) 0%, var(--card-gradient-end) 100%);
-  backdrop-filter: blur(6px);
-  background-color: var(--card); /* fallback for older browsers */
-  border-radius: 0.85rem;
-  text-decoration: none;
-  color: var(--fg);
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(125, 125, 125, 0.1);
-  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition), filter var(--transition);
-}
-
-.link-card::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background-color: var(--card-border);
-  transition: background-color 0.2s ease;
-}
-
-.link-card:hover, .link-card:focus {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
-  background-color: rgba(201, 170, 53, 0.12);
-  filter: brightness(1.05);
-}
-
-/* Sparkly shine effect */
-.link-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -150%;
-  width: 150%;
-  height: 100%;
-  background: linear-gradient(120deg, transparent 0%, rgba(201,170,53,0.6) 50%, transparent 100%);
   opacity: 0;
-  animation: shine 0.6s linear forwards;
-  pointer-events: none;
+  transform: translateY(-20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  padding: 20px 0 40px;
 }
 
-.link-card:hover::after, .link-card:focus::after, .link-card.show::after {
-  animation: shine 0.6s linear;
-  left: 100%;
-  opacity: 1;
-  background-color: var(--kanazawa-gold);
-}
-
-.link-card:nth-child(even)::before {
-  background-color: var(--accent-blue);
-}
-
-.link-card:nth-child(odd)::before {
-  background-color: var(--accent-green);
-}
-
-
-.link-card .title {
-  color: var(--fg-main);
-  font-weight: 600;
-  position: relative;
-  display: inline-block;
-}
-
-/* gold underline effect on hover */
-.link-card .title::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  width: 100%;
-  height: 2px;
-  background-color: var(--kanazawa-gold);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.3s ease;
-}
-
-.link-card:hover .title::before {
-  transform: scaleX(1);
-}
-
-/* External link icon */
-.link-card[target="_blank"]::after {
-  content: "\f35d"; /* Font Awesome arrow-up-right-from-square */
-  font-family: "Font Awesome 6 Free";
-  font-weight: 900;
-  font-size: 14px;
-  margin-left: auto;
-  color: var(--accent-blue);
-  transition: transform var(--transition);
-}
-.link-card[target="_blank"]:hover::after {
-  transform: translateX(2px) translateY(-2px);
-}
-
-.section-title {
-  font-family: 'Noto Serif JP', serif;
-  font-size: clamp(1.3rem, 4vw, 1.6rem);
-  font-weight: 700;
-  color: var(--fg-main); /* darker text for accessibility */
-  text-align: center;
-  margin: 12px 0 16px;
-  letter-spacing: 0.04em;
-  position: relative;
-  text-shadow: 0 1px 1px rgba(0,0,0,0.05);
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -4px;
-  width: 60px;
-  height: 2px;
-  background: var(--kanazawa-gold);
-  opacity: 0.75;
-}
-
-footer {
-  margin-top: 24px;
-  font-size: 14px;
-  opacity: 0.7;
-  text-align: center;
-  font-family: 'Inter', 'Hiragino Sans', sans-serif;
-}
-
-
-@media (min-width: 768px) {
-  body {
-    padding: 40px 24px;
-  }
-  
-  .bio {
-    font-size: 18px;
-  }
-}
-
-@media (max-width: 350px) {
-  .link-card { 
-    padding: .9rem .9rem .9rem 1.1rem; 
-  }
-  .title { 
-    font-size: 15px; 
-  }
-}
-
-/* Scroll reveal animation */
-.animate {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.animate.show {
+.profile.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Trigger shine once when card becomes visible */
-.link-card.show::before {
-  animation: shine 0.6s linear;
+.avatar-wrapper {
+  position: relative;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@keyframes shine {
-  0% { left: -75%; opacity: 0; }
-  50% { opacity: 1; }
-  100% { left: 130%; opacity: 0; }
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+  /* White border for separation */
+  box-shadow:
+    0 10px 25px rgba(180, 144, 66, 0.2),
+    inset 0 0 20px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  z-index: 2;
+  position: relative;
+  animation: floatAvatar 6s ease-in-out infinite;
 }
 
-/* Utility classes */
-.nowrap {
-  white-space: nowrap;
+/* Inner Gold Ring */
+.avatar-wrapper::before {
+  content: '';
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 1px solid var(--kanazawa-gold);
+  opacity: 0.6;
+  z-index: 1;
+  animation: spinReverse 15s linear infinite;
 }
 
-@media (max-width: 400px) {
-  .nowrap { 
-    white-space: normal; /* 極小幅では改行を許可 */
+/* Outer Ripple Ring */
+.avatar-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 1px dashed var(--kanazawa-gold);
+  opacity: 0.3;
+  z-index: 0;
+  animation: rippleExpand 4s ease-out infinite;
+}
+
+/* Floating Animation */
+@keyframes floatAvatar {
+
+  0%,
+  100% {
+    transform: translateY(0);
   }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes rippleExpand {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+    border-width: 2px;
+  }
+
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+    border-width: 0px;
+  }
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  /* Dark gradient for light bg */
+  background: linear-gradient(to right, #333, #666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.05em;
+  text-shadow: none;
+  /* Removed shadow for cleaner look on light bg */
+}
+
+.role-badge {
+  font-size: 0.85rem;
+  color: var(--kanazawa-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  font-weight: 600;
+  margin-top: 8px;
+  position: relative;
+  display: inline-block;
+  /* Removed button-like styling (border, background, shadow) */
+}
+
+.role-badge::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: var(--kanazawa-gold);
+  margin: 12px auto 0;
+  opacity: 0.4;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: 100%;
+}
+
+@media (min-width: 600px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Make the first item (featured) span full width if desired, or just keep grid */
+  .portfolio-item.featured {
+    grid-column: span 2;
+  }
+}
+
+.portfolio-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 24px;
+  text-decoration: none;
+  color: var(--fg-main);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+/* Hover State - Lift & Glow */
+.portfolio-item:hover {
+  background: var(--card-hover-bg);
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--kaga-enji);
+  /* Accent with Kaga Enji (Crimson) */
+  box-shadow:
+    0 20px 40px -10px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(181, 62, 72, 0.2),
+    /* Red glow */
+    inset 0 0 0 1px rgba(197, 160, 89, 0.1);
+}
+
+/* Background Gradient Reveal */
+.portfolio-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Subtle gradient from Gold to Enji */
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.05) 0%, rgba(181, 62, 72, 0.05) 100%);
+  opacity: 0;
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.portfolio-item:hover::before {
+  opacity: 1;
+}
+
+/* Shine Effect (Passing Light) */
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.08),
+      transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: left 0s;
+}
+
+.portfolio-item:hover::after {
+  left: 150%;
+  transition: left 0.8s ease-in-out;
+}
+
+.item-icon {
+  font-size: 2rem;
+  margin-bottom: 16px;
+  color: var(--kanazawa-gold);
+  transition: var(--transition);
+  transform-origin: left center;
+  opacity: 0.9;
+}
+
+.portfolio-item:hover .item-icon {
+  transform: scale(1.1);
+  color: var(--fg-main);
+  text-shadow: 0 0 15px var(--kaga-enji);
+  /* Red glow on icon */
+}
+
+.item-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  letter-spacing: 0.05em;
+}
+
+.portfolio-item:hover .item-content h3 {
+  color: var(--kanazawa-gold);
+}
+
+.item-content p {
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.portfolio-item:hover .item-content p {
+  color: var(--fg-main);
+}
+
+.arrow-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 0.9rem;
+  opacity: 0.3;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover .arrow-icon {
+  opacity: 1;
+  transform: translate(4px, -4px);
+  color: var(--kaga-enji);
+}
+
+/* Section Title */
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+  color: var(--fg-muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.section-header::after {
+  content: '';
+  height: 1px;
+  flex: 1;
+  background: linear-gradient(to right, var(--card-border), transparent);
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+  padding-top: 40px;
+  color: var(--fg-muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered delays for grid items */
+.portfolio-item:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.portfolio-item:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.portfolio-item:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.portfolio-item:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.portfolio-item:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+/* Project Image Styling */
+.item-icon.project-image {
+  width: 80px;
+  height: 80px;
+  display: block;
+  font-size: 0;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.item-icon.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  /* Circular crop */
+  border: 1px solid rgba(180, 144, 66, 0.3);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.portfolio-item:hover .item-icon.project-image img {
+  border-color: var(--kaga-enji);
+  transform: rotate(-3deg) scale(1.05);
+  box-shadow: 0 8px 25px rgba(168, 56, 64, 0.2);
+}
+
+/* Reset transform for the container to avoid double transform */
+.portfolio-item:hover .item-icon.project-image {
+  transform: none;
+  text-shadow: none;
 }

@@ -1,30 +1,23 @@
 // motion.js
-// Simple scroll-triggered animations inspired by Kanazawa gold-leaf craft.
-// Elements with the class `.animate` will fade and slide in when they enter the viewport.
+// Intersection Observer for scroll animations
 
-(function () {
-  const revealClass = 'show';
-  const targets = document.querySelectorAll('.animate');
+document.addEventListener('DOMContentLoaded', () => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
 
-  if (!('IntersectionObserver' in window) || targets.length === 0) {
-    // Fallback – just show all
-    targets.forEach(el => el.classList.add(revealClass));
-    return;
-  }
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); // Animate only once
+      }
+    });
+  }, observerOptions);
 
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(revealClass);
-          observer.unobserve(entry.target); // animate once
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-    }
-  );
-
-  targets.forEach(el => observer.observe(el));
-})();
+  // Target elements
+  const animatedElements = document.querySelectorAll('.animate-item, .profile');
+  animatedElements.forEach(el => observer.observe(el));
+});
