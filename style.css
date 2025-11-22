@@ -110,7 +110,7 @@ body::before {
   transition: var(--transition);
   z-index: 2;
   position: relative;
-  animation: floatAvatar 6s ease-in-out infinite;
+  /* animation: floatAvatar 6s ease-in-out infinite; Removed floating animation */
 }
 
 /* Inner Gold Ring */
