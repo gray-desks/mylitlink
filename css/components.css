@@ -142,11 +142,7 @@
     transition: var(--transition);
 }
 
-.card:hover {
-    box-shadow: var(--shadow-lg);
-    border-color: var(--accent-gold);
-    transform: translateY(-4px);
-}
+
 
 .card__label {
     font-size: 11px;

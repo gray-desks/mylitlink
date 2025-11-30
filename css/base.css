@@ -46,9 +46,11 @@ body::after {
     pointer-events: none;
 }
 
-a {
+a,
+button {
     color: inherit;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .container {

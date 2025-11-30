@@ -148,6 +148,7 @@
     font-family: var(--font-heading);
     text-shadow: 0 2px 10px rgba(198, 164, 82, 0.15);
     line-height: 1.2;
+    white-space: nowrap;
 }
 
 .header__subtitle {
@@ -188,6 +189,12 @@
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 12px;
     margin-top: 12px;
+}
+
+@media (min-width: 840px) {
+    .hero__callouts {
+        grid-template-columns: 1fr;
+    }
 }
 
 .hero__visual {
@@ -344,6 +351,7 @@
 .footer__nav a:hover,
 .footer__links a:hover {
     color: var(--accent-gold);
+    text-decoration: underline;
 }
 
 .footer__bottom {
