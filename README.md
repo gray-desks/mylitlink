@@ -15,11 +15,17 @@
 ```
 mylitlink/
 ├── index.html          # メインページ
-├── style.v2.css        # スタイル（Fresh Kanazawaテーマ）
-├── motion.js           # アニメーション効果
-├── my.png              # アバター画像
-├── 秀歌.png            # 音楽アーティストリンク用画像
-├── note.png            # Note執筆リンク用画像
+├── css/
+│   └── style.css       # スタイル（Fresh Kanazawaテーマ）
+├── js/
+│   └── motion.js       # アニメーション効果
+├── assets/
+│   ├── my.jpg          # アバター画像
+│   ├── 秀歌.webp       # 音楽アーティストリンク用画像
+│   └── note.png        # Note執筆リンク用画像
+├── docs/
+│   ├── ecosystem.md    # プロジェクト・エコシステム図
+│   └── business_strategy.md
 └── README.md           # このファイル
 ```
 
@@ -68,7 +74,7 @@ open http://localhost:3000
 
 #### アバター画像の変更
 
-1. 画像を `my.png` として保存（推奨: 700×700px正方形）
+1. 画像を `assets/my.jpg` として保存（推奨: 700×700px正方形）
 2. HTMLは自動で反映されます
 
 ### GitHub Pagesでの公開
