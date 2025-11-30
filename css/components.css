@@ -1,0 +1,295 @@
+/* Section surfaces (reduce all-white feel) */
+.section-surface {
+    padding: 18px 18px 20px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-default);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(246, 241, 230, 0.9));
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+}
+
+.section-surface .section-header {
+    margin-top: 4px;
+}
+
+.surface-gold {
+    background: linear-gradient(135deg, rgba(198, 164, 82, 0.16), rgba(251, 247, 239, 0.92));
+    border-color: rgba(198, 164, 82, 0.45);
+}
+
+.surface-blue {
+    background: linear-gradient(135deg, rgba(47, 72, 88, 0.12), rgba(251, 247, 239, 0.94));
+    border-color: rgba(47, 72, 88, 0.3);
+}
+
+.surface-green {
+    background: linear-gradient(135deg, rgba(95, 111, 58, 0.12), rgba(251, 247, 239, 0.94));
+    border-color: rgba(95, 111, 58, 0.32);
+}
+
+.surface-pink {
+    background: linear-gradient(135deg, rgba(192, 79, 71, 0.12), rgba(251, 247, 239, 0.94));
+    border-color: rgba(192, 79, 71, 0.32);
+}
+
+.surface-purple {
+    background: linear-gradient(135deg, rgba(122, 93, 82, 0.12), rgba(251, 247, 239, 0.94));
+    border-color: rgba(122, 93, 82, 0.32);
+}
+
+/* ========== Section Title ========== */
+.section-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.section-header__title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    letter-spacing: 0.08em;
+}
+
+.section-header__title::before,
+.section-header__title::after {
+    content: '';
+    width: 32px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+    opacity: 0.8;
+}
+
+.section-header__desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+}
+
+/* ========== Flow Arrow ========== */
+.flow-section {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.flow-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.flow-arrow__line {
+    width: 1px;
+    height: 28px;
+    background: linear-gradient(to bottom, var(--accent-gold), transparent);
+}
+
+.flow-arrow__icon {
+    font-size: 16px;
+    color: var(--accent-gold);
+}
+
+.flow-arrow__label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    max-width: 140px;
+}
+
+/* Stats */
+.stat-bar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin: 16px 0 10px;
+}
+
+.stat-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: 14px;
+    box-shadow: var(--shadow-sm);
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.2;
+    font-family: var(--font-heading);
+    letter-spacing: 0.06em;
+}
+
+.stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+/* ========== Card Base ========== */
+.card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.97), rgba(246, 241, 230, 0.94));
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent-gold);
+    transform: translateY(-4px);
+}
+
+.card__label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.card__label::before {
+    content: '';
+    width: 3px;
+    height: 14px;
+    border-radius: 2px;
+}
+
+.card__desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+/* ========== SNS Icons ========== */
+.sns-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+.sns-icon:hover {
+    transform: translateY(-2px);
+}
+
+.sns-icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sns-icon--youtube {
+    background: rgba(229, 115, 115, 0.12);
+    color: var(--youtube);
+}
+
+.sns-icon--youtube:hover {
+    background: rgba(229, 115, 115, 0.2);
+}
+
+.sns-icon--twitter {
+    background: rgba(92, 92, 92, 0.1);
+    color: var(--twitter);
+}
+
+.sns-icon--twitter:hover {
+    background: rgba(92, 92, 92, 0.18);
+}
+
+.sns-icon--instagram {
+    background: rgba(193, 123, 173, 0.12);
+    color: var(--instagram);
+}
+
+.sns-icon--instagram:hover {
+    background: rgba(193, 123, 173, 0.2);
+}
+
+.sns-icon--facebook {
+    background: rgba(123, 157, 212, 0.12);
+    color: var(--facebook);
+}
+
+.sns-icon--facebook:hover {
+    background: rgba(123, 157, 212, 0.2);
+}
+
+.sns-icons-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.pill-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #fff;
+    border-radius: var(--radius-full);
+    border: 1px solid var(--border-default);
+    box-shadow: var(--shadow-sm);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.pill-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent-gold);
+}
+
+.pill-button--filled {
+    background: linear-gradient(120deg, var(--accent-pink), var(--accent-gold));
+    color: #fff;
+    border: none;
+}
+
+.pill-button--outline {
+    background: var(--bg-secondary);
+    color: var(--accent-pink);
+    border: 1px solid var(--accent-pink);
+}
+
+/* ========== CTA Ribbon ========== */
+.cta-ribbon {
+    background: linear-gradient(120deg, rgba(192, 79, 71, 0.9), rgba(198, 164, 82, 0.9));
+    color: #fff;
+    border-radius: var(--radius-lg);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.cta-ribbon__title {
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.cta-ribbon__desc {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 620px;
+}

@@ -1,0 +1,44 @@
+:root {
+    /* Wasabi-inspired Washi Palette */
+    --bg-primary: #f6f1e6;
+    --bg-secondary: #fbf7ef;
+    --bg-tertiary: #efe7d9;
+    --border-default: #ded3c1;
+    --border-subtle: #d1c6b3;
+    --text-primary: #1c1a16;
+    --text-secondary: #433c32;
+    --text-muted: #6a5f52;
+
+    /* Japanese accent hues */
+    --accent-gold: #c6a452;
+    --accent-gold-light: #d8c37a;
+    --accent-gold-bg: #f6edd7;
+    --accent-blue: #2f4858;
+    --accent-blue-bg: #e5eef3;
+    --accent-green: #5f6f3a;
+    --accent-green-bg: #e5eadc;
+    --accent-purple: #7a5d52;
+    --accent-purple-bg: #f1e7e1;
+    --accent-pink: #c04f47;
+    --accent-pink-bg: #f7e5e0;
+    --accent-cyan: #4c6b71;
+    --accent-cyan-bg: #e3eded;
+
+    /* SNS Brand Colors (softened) */
+    --youtube: #d6675d;
+    --twitter: #5c5c5c;
+    --instagram: #b16a95;
+    --facebook: #6f8dbd;
+
+    --font-body: 'Zen Maru Gothic', 'Noto Sans JP', sans-serif;
+    --font-heading: 'Shippori Mincho', 'Zen Maru Gothic', serif;
+
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}

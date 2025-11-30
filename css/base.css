@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.8;
+    min-height: 100vh;
+    letter-spacing: 0.01em;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Layered background: washi gradients + grain */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 16%, rgba(192, 79, 71, 0.09), transparent 32%),
+        radial-gradient(circle at 80% 18%, rgba(47, 72, 88, 0.08), transparent 34%),
+        radial-gradient(circle at 32% 78%, rgba(198, 164, 82, 0.12), transparent 36%),
+        linear-gradient(120deg, rgba(255, 255, 255, 0.95) 0%, rgba(246, 241, 230, 0.7) 55%, rgba(255, 255, 255, 0.95) 100%);
+    z-index: -2;
+    pointer-events: none;
+}
+
+body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.015) 1px, transparent 1px),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+    background-size: 140px 140px, 140px 140px, 260px 260px;
+    opacity: 0.7;
+    mix-blend-mode: multiply;
+    z-index: -1;
+    pointer-events: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 56px 24px;
+}
+
+h1,
+h2,
+h3,
+.section-header__title,
+.core__title,
+.hub__title,
+.cta-ribbon__title {
+    font-family: var(--font-heading);
+    letter-spacing: 0.04em;
+}
