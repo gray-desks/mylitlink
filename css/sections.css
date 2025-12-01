@@ -520,6 +520,36 @@ a.media__item:hover {
     line-height: 1.5;
 }
 
+.media__item-meta {
+    display: flex;
+    align-items: center;
+    margin-top: 6px;
+}
+
+.media__newtab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(95, 111, 58, 0.45);
+    background: rgba(95, 111, 58, 0.12);
+    color: var(--accent-green);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.media__newtab-icon {
+    width: 12px;
+    height: 12px;
+}
+
+a.media__item:hover .media__newtab {
+    border-color: var(--accent-green);
+    background: rgba(95, 111, 58, 0.18);
+}
+
 /* Asset */
 .asset {
     background: linear-gradient(135deg, var(--accent-purple-bg) 0%, var(--bg-secondary) 60%);
@@ -564,6 +594,36 @@ a.asset__box:hover {
     color: var(--text-muted);
     margin-bottom: 12px;
     line-height: 1.5;
+}
+
+.asset__meta {
+    margin: 6px 0 10px;
+    display: flex;
+    align-items: center;
+}
+
+.asset__newtab {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 9px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(122, 93, 82, 0.45);
+    background: rgba(122, 93, 82, 0.12);
+    color: var(--accent-purple);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+}
+
+.asset__newtab-icon {
+    width: 12px;
+    height: 12px;
+}
+
+a.asset__box:hover .asset__newtab {
+    border-color: var(--accent-purple);
+    background: rgba(122, 93, 82, 0.18);
 }
 
 .asset__features {
@@ -681,6 +741,12 @@ a.asset__box:hover {
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+.distribution__note {
+    margin-top: 16px;
+    font-size: 11px;
+    color: var(--text-muted);
 }
 
 /* ========== Hub Strategy ========== */
