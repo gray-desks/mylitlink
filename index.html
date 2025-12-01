@@ -21,6 +21,11 @@
     <div class="site-header__inner">
       <a class="site-brand" href="#top"><img src="assets/logo_symbol.svg" alt="Logo" class="brand-logo">
         hide-works.net</a>
+      <button class="hamburger-btn" aria-label="メニューを開く" aria-expanded="false">
+        <span class="hamburger-btn__line"></span>
+        <span class="hamburger-btn__line"></span>
+        <span class="hamburger-btn__line"></span>
+      </button>
       <nav class="site-nav">
         <a href="#core">コア</a>
         <a href="#projects">プロジェクト</a>
@@ -28,13 +33,12 @@
         <a href="#ecosystem">循環</a>
         <a href="#distribution">流通</a>
         <a href="#hub">ハブ</a>
-
+        <a class="pill-button pill-button--filled site-header__cta" href="https://project-shuka.com/" target="_blank"
+          rel="noopener">音楽アーティスト-「秀歌」 公式サイト <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="3">
+            <path d="M7 17L17 7M17 7H7M17 7V17" />
+          </svg></a>
       </nav>
-      <a class="pill-button pill-button--filled site-header__cta" href="https://project-shuka.com/" target="_blank"
-        rel="noopener">音楽アーティスト-「秀歌」 公式サイト <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="3">
-          <path d="M7 17L17 7M17 7H7M17 7V17" />
-        </svg></a>
     </div>
   </header>
   <div class="container">
@@ -43,29 +47,29 @@
     <header class="header" id="top">
       <div class="hero">
         <div class="hero__grid">
-          <div>
-            <div class="hero__profile">
-
-              <div>
-                <p class="header__label">BUSINESS ARCHITECTURE</p>
-                <h1 class="header__title">ひとり、プロダクション。</h1>
-                <p class="header__subtitle">AI・自動化・多言語展開。組織に頼らない新しい働き方</p>
-                <div class="header__accent"></div>
-                <p class="hero__intro">
-                  AIと自動化を駆使し、たった一人で組織規模のIPを創出・展開する次世代型プロダクション。音楽アーティスト「秀歌」を中核に、技術ブログ・旅ログを世界多言語へ同時展開。映像・音楽・知識が循環するエコシステムを構築し、個人の可能性を最大化する「ひとり、プロダクション」の実践と実験の場です。
-                </p>
+          <div class="hero__content-wrapper">
+            <div class="hero__header-group">
+              <div class="hero__profile">
+                <div>
+                  <p class="header__label">BUSINESS ARCHITECTURE</p>
+                  <h1 class="header__title">ひとり、プロダクション。</h1>
+                  <p class="header__subtitle">AI・自動化・多言語展開。組織に頼らない新しい働き方</p>
+                  <div class="header__accent"></div>
+                </div>
               </div>
             </div>
 
+            <div class="hero__body-group">
+              <p class="hero__intro">
+                AIと自動化を駆使し、たった一人で組織規模のIPを創出・展開する次世代型プロダクション。音楽アーティスト「秀歌」を中核に、技術ブログ・旅ログを世界多言語へ同時展開。映像・音楽・知識が循環するエコシステムを構築し、個人の可能性を最大化する「ひとり、プロダクション」の実践と実験の場です。
+              </p>
 
-
-
-
-            <div class="hero__callouts">
-              <div class="callout">🤖 <strong>AI Co-Creation</strong> AIと協働し、組織レベルの生産性を実現</div>
-              <div class="callout">⚡️ <strong>Vibe Coding</strong> 自然言語でコードを操る次世代の開発術</div>
-              <div class="callout">🌏 <strong>Global Reach</strong> テクノロジーで世界へ届ける多言語展開</div>
-              <div class="callout">🎨 <strong>IP Incubation</strong> 0から物語・音楽・ブランドを創り出す</div>
+              <div class="hero__callouts">
+                <div class="callout">🤖 <strong>AI Co-Creation</strong> AIと協働し、組織レベルの生産性を実現</div>
+                <div class="callout">⚡️ <strong>Vibe Coding</strong> 自然言語でコードを操る次世代の開発術</div>
+                <div class="callout">🌏 <strong>Global Reach</strong> テクノロジーで世界へ届ける多言語展開</div>
+                <div class="callout">🎨 <strong>IP Incubation</strong> 0から物語・音楽・ブランドを創り出す</div>
+              </div>
             </div>
           </div>
 
@@ -573,16 +577,16 @@
               </a>
               <a href="#" class="sns-icon sns-icon--facebook is-disabled" title="Facebook">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-              </svg>
-            </a>
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
+        <div class="distribution__note">⏳ グレーアウトしているSNSボタンは現在準備中です</div>
       </div>
-      <div class="distribution__note">⏳ グレーアウトしているSNSボタンは現在準備中です</div>
-    </div>
-  </section>
+    </section>
 
     <!-- ========== Hub Strategy ========== -->
     <section class="hub-section section-surface surface-gold" id="hub">
@@ -673,6 +677,7 @@
   </footer>
   <script src="js/contact.js"></script>
   <script src="js/motion.js"></script>
+  <script src="js/navigation.js"></script>
 </body>
 
 </html>

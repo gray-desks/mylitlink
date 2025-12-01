@@ -60,7 +60,7 @@
     }
 
     .core__cover-img {
-        object-position: 25% center;
+        object-position: left center;
     }
 }
 
@@ -433,6 +433,21 @@
     }
 }
 
+/* Ecosystem Flow Diagram Styles */
+@media (max-width: 600px) {
+    .flow-row {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .flow-line--spread {
+        height: 20px;
+        width: 2px;
+        margin: 0 auto;
+    }
+}
+
 /* ========== 3. Projects Grid ========== */
 .projects-section {
     margin-bottom: 16px;
@@ -763,6 +778,13 @@ a.asset__box:hover .asset__newtab {
     border-radius: var(--radius-lg);
     padding: 24px;
     box-shadow: var(--shadow-lg);
+}
+
+@media (min-width: 900px) {
+    .hub {
+        grid-template-columns: 1fr 1fr;
+        align-items: start;
+    }
 }
 
 .hub__site {

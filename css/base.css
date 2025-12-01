@@ -10,11 +10,17 @@ body {
     color: var(--text-primary);
     line-height: 1.8;
     min-height: 100vh;
+    width: 100%;
     letter-spacing: 0.01em;
     -webkit-font-smoothing: antialiased;
 
     position: relative;
     overflow-x: hidden;
+}
+
+html {
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Layered background: washi gradients + grain */
