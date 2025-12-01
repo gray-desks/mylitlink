@@ -29,15 +29,122 @@
       <nav class="site-nav">
         <a href="#core">コア</a>
         <a href="#projects">プロジェクト</a>
-        <a href="#engine">エンジン</a>
         <a href="#ecosystem">循環</a>
-        <a href="#distribution">流通</a>
         <a href="#hub">ハブ</a>
-        <a class="pill-button pill-button--filled site-header__cta" href="https://project-shuka.com/" target="_blank"
-          rel="noopener">音楽アーティスト-「秀歌」 公式サイト <svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="3">
-            <path d="M7 17L17 7M17 7H7M17 7V17" />
-          </svg></a>
+        <a href="#distribution">流通</a>
+        <div class="external-dropdown external-dropdown--desktop" aria-label="外部サイト">
+          <button class="external-dropdown__toggle" type="button" aria-expanded="false"
+            aria-controls="external-link-menu" aria-haspopup="true">
+            <span>外部リンク</span>
+            <svg class="external-dropdown__chevron" viewBox="0 0 20 20" fill="none" stroke="currentColor"
+              stroke-width="2">
+              <path d="M5 8l5 5 5-5" />
+            </svg>
+          </button>
+          <div class="external-dropdown__menu" id="external-link-menu">
+            <a href="https://project-shuka.com/" target="_blank" rel="noopener" class="external-dropdown__item">
+              <span class="external-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 11.5 12 5l8 6.5V20h-5v-4H9v4H4z" />
+                </svg>
+              </span>
+              <span>秀歌公式</span>
+            </a>
+            <a href="https://www.youtube.com/@project-shuka" target="_blank" rel="noopener"
+              class="external-dropdown__item">
+              <span class="external-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M21.8 8.1a2.5 2.5 0 0 0-1.8-1.8C18.2 6 12 6 12 6s-6.2 0-8 .3A2.5 2.5 0 0 0 2.2 8C2 9.8 2 12 2 12s0 2.2.2 4a2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6.2 0 8-.2a2.5 2.5 0 0 0 1.8-1.8c.2-1.8.2-4 .2-4s0-2.2-.2-4Z" />
+                  <path d="m10 9 4.5 3L10 15V9Z" fill="#fff" />
+                </svg>
+              </span>
+              <span>YouTube</span>
+            </a>
+            <a href="https://note.com/yamazaki2357" target="_blank" rel="noopener" class="external-dropdown__item">
+              <span class="external-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 4h9l3 3v13H6V4Z" />
+                  <path d="M15 4v3h3" fill="#fff" opacity="0.35" />
+                </svg>
+              </span>
+              <span>Note</span>
+            </a>
+            <a href="https://project-ai-blog.com/" target="_blank" rel="noopener" class="external-dropdown__item">
+              <span class="external-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="3" />
+                  <circle cx="9" cy="9" r="2" />
+                  <path d="M15 7h3M7 15h3m2 0h5" />
+                </svg>
+              </span>
+              <span>AI情報サイト</span>
+            </a>
+            <a href="https://www.japan-travel-log.com/" target="_blank" rel="noopener" class="external-dropdown__item">
+              <span class="external-link-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s6-4.5 6-10a6 6 0 1 0-12 0c0 5.5 6 10 6 10Z" />
+                  <circle cx="12" cy="11" r="2.5" />
+                </svg>
+              </span>
+              <span>旅ログ</span>
+            </a>
+          </div>
+        </div>
+        <div class="external-links external-links--mobile" aria-label="外部サイト">
+          <div class="external-links__header">
+            <span class="external-links__badge">External</span>
+          </div>
+          <div class="external-links__grid">
+            <a class="external-links__item" href="https://project-shuka.com/" target="_blank" rel="noopener">
+              <span class="external-links__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M4 11.5 12 5l8 6.5V20h-5v-4H9v4H4z" />
+                </svg>
+              </span>
+              <span class="external-links__title">秀歌公式</span>
+            </a>
+            <a class="external-links__item" href="https://www.youtube.com/@project-shuka" target="_blank"
+              rel="noopener">
+              <span class="external-links__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M21.8 8.1a2.5 2.5 0 0 0-1.8-1.8C18.2 6 12 6 12 6s-6.2 0-8 .3A2.5 2.5 0 0 0 2.2 8C2 9.8 2 12 2 12s0 2.2.2 4a2.5 2.5 0 0 0 1.8 1.8C6 18 12 18 12 18s6.2 0 8-.2a2.5 2.5 0 0 0 1.8-1.8c.2-1.8.2-4 .2-4s0-2.2-.2-4Z" />
+                  <path d="m10 9 4.5 3L10 15V9Z" fill="#fff" />
+                </svg>
+              </span>
+              <span class="external-links__title">YouTube</span>
+            </a>
+            <a class="external-links__item" href="https://note.com/yamazaki2357" target="_blank" rel="noopener">
+              <span class="external-links__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M6 4h9l3 3v13H6V4Z" />
+                  <path d="M15 4v3h3" fill="#fff" opacity="0.35" />
+                </svg>
+              </span>
+              <span class="external-links__title">Note</span>
+            </a>
+            <a class="external-links__item" href="https://project-ai-blog.com/" target="_blank" rel="noopener">
+              <span class="external-links__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="4" y="4" width="16" height="16" rx="3" />
+                  <circle cx="9" cy="9" r="2" />
+                  <path d="M15 7h3M7 15h3m2 0h5" />
+                </svg>
+              </span>
+              <span class="external-links__title">AI情報サイト</span>
+            </a>
+            <a class="external-links__item" href="https://www.japan-travel-log.com/" target="_blank" rel="noopener">
+              <span class="external-links__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 21s6-4.5 6-10a6 6 0 1 0-12 0c0 5.5 6 10 6 10Z" />
+                  <circle cx="12" cy="11" r="2.5" />
+                </svg>
+              </span>
+              <span class="external-links__title">旅ログ</span>
+            </a>
+          </div>
+        </div>
       </nav>
     </div>
   </header>
@@ -63,13 +170,6 @@
               <p class="hero__intro">
                 AIと自動化を駆使し、たった一人で組織規模のIPを創出・展開する次世代型プロダクション。音楽アーティスト「秀歌」を中核に、技術ブログ・旅ログを世界多言語へ同時展開。映像・音楽・知識が循環するエコシステムを構築し、個人の可能性を最大化する「ひとり、プロダクション」の実践と実験の場です。
               </p>
-
-              <div class="hero__callouts">
-                <div class="callout">🤖 <strong>AI Co-Creation</strong> AIと協働し、組織レベルの生産性を実現</div>
-                <div class="callout">⚡️ <strong>Vibe Coding</strong> 自然言語でコードを操る次世代の開発術</div>
-                <div class="callout">🌏 <strong>Global Reach</strong> テクノロジーで世界へ届ける多言語展開</div>
-                <div class="callout">🎨 <strong>IP Incubation</strong> 0から物語・音楽・ブランドを創り出す</div>
-              </div>
             </div>
           </div>
 
@@ -85,8 +185,6 @@
       </div>
     </header>
 
-
-
     <!-- ========== 1. Core Project ========== -->
     <section class="core-section section-surface surface-gold" id="core">
       <div class="section-header">
@@ -99,7 +197,16 @@
 
         <!-- Main Visual Cover -->
         <div class="core__cover">
-          <img src="assets/shuka_site_cover.webp" alt="Project SHUKA Official Website" class="core__cover-img">
+          <img
+            src="assets/shuka_site_cover.webp"
+            srcset="assets/shuka_site_cover_900.webp 900w, assets/shuka_site_cover.webp 1200w"
+            sizes="(max-width: 600px) 100vw, (max-width: 1024px) 90vw, 1100px"
+            width="1200"
+            height="452"
+            loading="lazy"
+            decoding="async"
+            alt="Project SHUKA Official Website"
+            class="core__cover-img">
           <div class="core__cover-overlay">
             <div class="core__cover-content">
               <p class="core__label">AI Artist Production</p>
@@ -305,43 +412,6 @@
       <div id="contact-toast" class="contact-toast">Copied!</div>
     </dialog>
 
-    <!-- ========== 2. Production Engine ========== -->
-    <section class="engine-section section-surface surface-blue" id="engine">
-      <div class="section-header">
-        <h2 class="section-header__title">生産・管理エンジン</h2>
-        <p class="section-header__desc">個人で組織レベルの生産性を実現する仕組み</p>
-      </div>
-
-      <div class="engine-grid">
-        <div class="card engine">
-          <p class="card__label">開発・自動化</p>
-          <p class="card__desc">AIとの対話でコーディング・運用を行い、手作業を最小化して生産性を最大化</p>
-          <div class="engine__box">
-            <p class="engine__box-title">Vibe Coding System</p>
-            <p class="engine__box-desc">ChatGPT / Claude / Gemini との対話型開発。サイト構築からSNS運用まで全てAI駆動</p>
-          </div>
-        </div>
-
-        <div class="card lang">
-          <p class="card__label">多言語化エンジン</p>
-          <p class="card__desc">すべてのコンテンツを多言語に自動展開し、単一アカウントで全世界にリーチ</p>
-          <div class="lang__box">
-            <p class="lang__title">多言語対応</p>
-            <p class="lang__list">サイト自動切替 / 動画CC / 記事翻訳</p>
-            <div class="lang__tags">
-              <span class="lang__tag">日本語</span>
-              <span class="lang__tag">English</span>
-              <span class="lang__tag">Français</span>
-              <span class="lang__tag">中文</span>
-              <span class="lang__tag">Español</span>
-              <span class="lang__tag">Português</span>
-              <span class="lang__tag">Indonesia</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ========== 7. Tech Stack ========== -->
     <section class="tech-section section-surface surface-blue" id="tech">
       <div class="section-header">
@@ -524,6 +594,45 @@
       </div>
     </section>
 
+    <!-- ========== Hub Strategy ========== -->
+    <section class="hub-section section-surface surface-gold" id="hub">
+      <div class="section-header">
+        <h2 class="section-header__title">ハブ誘導戦略</h2>
+        <p class="section-header__desc">音楽アーティスト-「秀歌」公式サイトを中心に、AIブログと旅ログを並行運用してトラフィックを集約</p>
+      </div>
+      <div class="hub">
+        <div class="hub__site">
+          <p class="hub__title">公式サイト = ハブ (project-shuka.com)</p>
+          <p class="hub__desc">
+            AI情報ブログで技術に興味を持った人、日本観光の旅ログで和の世界観に触れた人、それぞれが公式サイトへ流入。埋め込みYouTube動画で再生回数・再生時間を獲得し、チャンネルを育てる導線設計。</p>
+          <p class="hub__note">公式サイト内：多言語切替 / MV埋め込み / 多言語字幕 / SNSリンク。ポートフォリオ（本サイト）からも公式サイトへ横断リンク。</p>
+          <div class="hero__actions">
+            <a class="pill-button pill-button--outline" href="https://project-shuka.com/" target="_blank" rel="noopener">
+              公式サイトを見る
+            </a>
+          </div>
+        </div>
+        <div class="persona-grid">
+          <div class="persona-card">
+            <div class="persona-card__head">
+              <span>🤖</span>
+              <span class="persona-card__title">AIに興味がある人</span>
+            </div>
+            <p class="persona-card__desc">AI制作プロセスに関心があるMakers層。AI情報ブログで技術導線を示し、AI制作物としての「秀歌」へ誘導。</p>
+            <span class="persona-card__route">AIブログ → 公式サイト → YouTube MV</span>
+          </div>
+          <div class="persona-card">
+            <div class="persona-card__head">
+              <span>🗾</span>
+              <span class="persona-card__title">日本観光に興味がある人</span>
+            </div>
+            <p class="persona-card__desc">和・日本文化に惹かれる観光層。旅ログで世界観に触れ、和テイストの楽曲・映像として「秀歌」を訴求。</p>
+            <span class="persona-card__route">旅ログ → 公式サイト → YouTube MV</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ========== 4. Distribution ========== -->
     <section class="distribution-section section-surface surface-pink" id="distribution">
       <div class="card distribution">
@@ -588,40 +697,6 @@
       </div>
     </section>
 
-    <!-- ========== Hub Strategy ========== -->
-    <section class="hub-section section-surface surface-gold" id="hub">
-      <div class="section-header">
-        <h2 class="section-header__title">ハブ誘導戦略</h2>
-        <p class="section-header__desc">音楽アーティスト-「秀歌」公式サイトを中心に、AIブログと旅ログを並行運用してトラフィックを集約</p>
-      </div>
-      <div class="hub">
-        <div class="hub__site">
-          <p class="hub__title">公式サイト = ハブ (project-shuka.com)</p>
-          <p class="hub__desc">
-            AI情報ブログで技術に興味を持った人、日本観光の旅ログで和の世界観に触れた人、それぞれが公式サイトへ流入。埋め込みYouTube動画で再生回数・再生時間を獲得し、チャンネルを育てる導線設計。</p>
-          <p class="hub__note">公式サイト内：多言語切替 / MV埋め込み / 多言語字幕 / SNSリンク。ポートフォリオ（本サイト）からも公式サイトへ横断リンク。</p>
-        </div>
-        <div class="persona-grid">
-          <div class="persona-card">
-            <div class="persona-card__head">
-              <span>🤖</span>
-              <span class="persona-card__title">AIに興味がある人</span>
-            </div>
-            <p class="persona-card__desc">AI制作プロセスに関心があるMakers層。AI情報ブログで技術導線を示し、AI制作物としての「秀歌」へ誘導。</p>
-            <span class="persona-card__route">AIブログ → 公式サイト → YouTube MV</span>
-          </div>
-          <div class="persona-card">
-            <div class="persona-card__head">
-              <span>🗾</span>
-              <span class="persona-card__title">日本観光に興味がある人</span>
-            </div>
-            <p class="persona-card__desc">和・日本文化に惹かれる観光層。旅ログで世界観に触れ、和テイストの楽曲・映像として「秀歌」を訴求。</p>
-            <span class="persona-card__route">旅ログ → 公式サイト → YouTube MV</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
 
     <!-- ========== CTA ========== -->
@@ -655,10 +730,9 @@
         <span class="footer__heading">セクション</span>
         <a href="#core">コア</a>
         <a href="#projects">プロジェクト</a>
-        <a href="#engine">エンジン</a>
         <a href="#ecosystem">循環</a>
-        <a href="#distribution">流通</a>
         <a href="#hub">ハブ</a>
+        <a href="#distribution">流通</a>
 
       </div>
       <div class="footer__links">
