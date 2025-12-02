@@ -526,13 +526,22 @@ a.media__item:hover {
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex: 1;
+}
+
+.media__header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 2px;
 }
 
 .media__item-title {
     font-size: 13px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin: 0;
 }
 
 .media__item-desc {
@@ -541,34 +550,119 @@ a.media__item:hover {
     line-height: 1.5;
 }
 
-.media__item-meta {
-    display: flex;
-    align-items: center;
-    margin-top: 6px;
-}
-
 .media__newtab {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 5px 9px;
+    gap: 4px;
+    padding: 3px 8px;
     border-radius: var(--radius-full);
     border: 1px solid rgba(95, 111, 58, 0.45);
     background: rgba(95, 111, 58, 0.12);
     color: var(--accent-green);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.01em;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .media__newtab-icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 a.media__item:hover .media__newtab {
     border-color: var(--accent-green);
     background: rgba(95, 111, 58, 0.18);
+}
+
+/* Featured Note Item (Vertical Card Structure) */
+.media__item--note {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+    border: 1px solid var(--border-default);
+    border-left: none;
+    /* Reset default left border */
+    background: var(--bg-tertiary);
+}
+
+.media__item--note:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    background: var(--bg-secondary);
+}
+
+.media__note-cover {
+    height: 100px;
+    width: 100%;
+    background-image: url('../assets/note_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.media__note-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 3px solid #41C9B4;
+    /* Note Green Accent */
+}
+
+.media__note-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.media__note-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.media__thumb--small {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+}
+
+.media__item--note .media__item-title {
+    font-size: 14px;
+    color: var(--text-primary);
+    margin: 0;
+    text-shadow: none;
+}
+
+.media__item--note .media__item-desc {
+    color: var(--text-secondary);
+    text-shadow: none;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.media__item--note .media__newtab {
+    background: rgba(65, 201, 180, 0.1);
+    border-color: rgba(65, 201, 180, 0.3);
+    color: #2da896;
+    margin: 0;
+    /* Reset margin */
+    align-self: center;
+    /* Center vertically */
+}
+
+.media__item--note:hover .media__newtab {
+    background: rgba(65, 201, 180, 0.2);
+    border-color: #41C9B4;
 }
 
 /* Asset */
@@ -603,11 +697,19 @@ a.asset__box:hover {
     box-shadow: var(--shadow-md);
 }
 
+.asset__header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
 .asset__title {
     font-size: 14px;
     font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 6px;
+    margin: 0;
 }
 
 .asset__desc {
@@ -617,29 +719,25 @@ a.asset__box:hover {
     line-height: 1.5;
 }
 
-.asset__meta {
-    margin: 6px 0 10px;
-    display: flex;
-    align-items: center;
-}
-
 .asset__newtab {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 5px 9px;
+    gap: 4px;
+    padding: 3px 8px;
     border-radius: var(--radius-full);
     border: 1px solid rgba(122, 93, 82, 0.45);
     background: rgba(122, 93, 82, 0.12);
     color: var(--accent-purple);
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.01em;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .asset__newtab-icon {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 a.asset__box:hover .asset__newtab {
