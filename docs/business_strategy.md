@@ -54,7 +54,7 @@
 * **AI情報ブログ:** [project-ai-blog.com](https://project-ai-blog.com/)
     * *運用:* 定期的に自動下書き → 人間が壁打ち・修正 → 公開。
     * *役割:* 知識の定着、AdSense収益、「秀歌」への技術的導線。
-* **Note:** [note.com/yamazaki2357](https://note.com/yamazaki2357)
+* **Note:** [note.com/hide_works](https://note.com/hide_works)
     * *役割:* ブログ記事のマルチユース。
     * *商品:* **有料記事（制作ノウハウ、Vibe Coding術など）。**
 * **ターゲット:** **【A層】技術・ノウハウ関心層** (Makers)。
