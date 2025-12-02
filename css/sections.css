@@ -1,6 +1,12 @@
 /* ========== 1. Core Project (SHUKA) ========== */
 .core-section {
-    margin-bottom: 24px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .core-section {
+        margin-bottom: 100px;
+    }
 }
 
 .core {
@@ -62,7 +68,7 @@
 
 @media (max-width: 600px) {
     .core__cover {
-        height: 380px;
+        height: 280px;
     }
 
     .core__cover-img {
@@ -329,7 +335,13 @@
 }
 
 .engine-section {
-    margin-bottom: 16px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .engine-section {
+        margin-bottom: 80px;
+    }
 }
 
 .engine-grid {
@@ -456,7 +468,13 @@
 
 /* ========== 3. Projects Grid ========== */
 .projects-section {
-    margin-bottom: 16px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .projects-section {
+        margin-bottom: 100px;
+    }
 }
 
 .projects-grid {
@@ -614,10 +632,10 @@ a.media__item:hover {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 10px;
+    padding: 6px 12px;
     border-radius: var(--radius-full);
     background: #fff;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -685,57 +703,114 @@ a.media__item:hover .media__newtab-icon {
     color: var(--accent-purple);
 }
 
-.asset__box {
-    background: var(--bg-tertiary);
-    border-radius: var(--radius-sm);
-    padding: 16px;
-    border-left: 3px solid var(--accent-purple);
+/* Asset Items Container */
+.asset__items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-a.asset__box {
-    display: block;
+/* Asset Item (Common) */
+.asset__item {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    overflow: hidden;
+    gap: 0;
+    border: 1px solid var(--border-default);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    height: 100%;
     text-decoration: none;
     transition: var(--transition);
 }
 
-a.asset__box:hover {
+a.asset__item:hover {
     background: var(--bg-secondary);
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
 
-.asset__header-row {
+/* Culture Item (New) */
+.asset__culture-cover {
+    height: 100px;
+    width: 100%;
+    background: linear-gradient(135deg, #c6a452 0%, #eacda3 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: relative;
+}
+
+.asset__culture-cover::after {
+    content: '🇯🇵';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    opacity: 0.5;
+}
+
+.asset__culture-body {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-left: 3px solid #c6a452;
+    flex: 1;
+}
+
+.asset__culture-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 8px;
-    margin-bottom: 6px;
+    gap: 10px;
 }
 
-.asset__title {
+.asset__culture-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.asset__status {
+    font-size: 10px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--text-muted);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.05em;
+}
+
+/* Travel Item (Refactored) */
+/* Asset Titles & Descriptions (Common) */
+.asset__title,
+.asset__item-title {
     font-size: 16px;
     font-weight: 600;
     color: var(--text-primary);
     margin: 0;
 }
 
-.asset__desc {
+.asset__desc,
+.asset__item-desc {
     font-size: 14px;
-    color: var(--text-muted);
+    color: var(--text-secondary);
     margin-bottom: 12px;
     line-height: 1.5;
 }
 
+/* Asset New Tab Button (Common) */
 .asset__newtab {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    padding: 4px 10px;
+    padding: 6px 12px;
     border-radius: var(--radius-full);
     border: 1px solid var(--accent-purple);
     background: #fff;
     color: var(--accent-purple);
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 700;
     letter-spacing: 0.02em;
     white-space: nowrap;
@@ -750,33 +825,20 @@ a.asset__box:hover {
     transition: transform 0.3s ease;
 }
 
-a.asset__box:hover .asset__newtab {
+.asset__item:hover .asset__newtab {
     background: var(--accent-purple);
     color: #fff;
     box-shadow: 0 4px 12px rgba(122, 93, 82, 0.3);
     transform: translateY(-1px);
 }
 
-a.asset__box:hover .asset__newtab-icon {
+.asset__item:hover .asset__newtab-icon {
     transform: translate(1px, -1px);
 }
 
-/* Featured Travel Item (Vertical Card Structure) */
-.asset__box--travel {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    overflow: hidden;
-    gap: 0;
-    border: 1px solid var(--border-default);
-    border-left: none;
-    background: var(--bg-tertiary);
-}
-
-.asset__box--travel:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-    background: var(--bg-secondary);
+/* Travel Item Specifics */
+.asset__item--travel .asset__travel-body {
+    border-left-color: var(--accent-purple);
 }
 
 .asset__travel-cover {
@@ -808,35 +870,6 @@ a.asset__box:hover .asset__newtab-icon {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.asset__box--travel .asset__title {
-    font-size: 16px;
-    color: var(--text-primary);
-    margin: 0;
-}
-
-.asset__box--travel .asset__desc {
-    color: var(--text-secondary);
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 4px;
-}
-
-.asset__box--travel .asset__newtab {
-    background: #fff;
-    border-color: var(--accent-purple);
-    color: var(--accent-purple);
-    margin: 0;
-    align-self: center;
-    box-shadow: 0 2px 6px rgba(122, 93, 82, 0.15);
-}
-
-.asset__box--travel:hover .asset__newtab {
-    background: var(--accent-purple);
-    color: #fff;
-    border-color: var(--accent-purple);
-    box-shadow: 0 4px 12px rgba(122, 93, 82, 0.3);
 }
 
 .asset__features {
@@ -872,12 +905,13 @@ a.asset__box:hover .asset__newtab-icon {
 
 /* ========== 4. Global Channels ========== */
 .distribution-section {
-    margin-bottom: 24px;
+    margin-bottom: 60px;
 }
 
-/* ========== 4. Global Channels ========== */
-.distribution-section {
-    margin-bottom: 24px;
+@media (min-width: 768px) {
+    .distribution-section {
+        margin-bottom: 100px;
+    }
 }
 
 .channels-grid--equal {
@@ -966,7 +1000,13 @@ a.asset__box:hover .asset__newtab-icon {
 
 /* ========== Hub Strategy ========== */
 .hub-section {
-    margin: 16px 0 24px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .hub-section {
+        margin-bottom: 100px;
+    }
 }
 
 .hub {
@@ -1096,7 +1136,13 @@ a.asset__box:hover .asset__newtab-icon {
 
 /* ========== 6. Ecosystem ========== */
 .ecosystem-section {
-    margin-bottom: 48px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .ecosystem-section {
+        margin-bottom: 100px;
+    }
 }
 
 .ecosystem-grid {
@@ -1341,7 +1387,13 @@ a.asset__box:hover .asset__newtab-icon {
 
 /* ========== 7. Tech Stack ========== */
 .tech-section {
-    margin-bottom: 48px;
+    margin-bottom: 60px;
+}
+
+@media (min-width: 768px) {
+    .tech-section {
+        margin-bottom: 100px;
+    }
 }
 
 .tech-grid {
